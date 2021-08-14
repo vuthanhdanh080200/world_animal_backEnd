@@ -1,9 +1,9 @@
 module.exports = {
-  user: "sa",
-  password: "123456789",
+  user: "danh",
+  password: "123456abcABC",
   database: "world_animal",
-  server: "192.168.1.81",
-  port: 1433,
+  server: "mssql-44725-0.cloudclusters.net",
+  port: 19777,
   pool: {
     max: 10,
     min: 0,
