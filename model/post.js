@@ -15,6 +15,7 @@ class Post {
       .input("UserId", sql.NVarChar(50), userId)
       .execute("[dbo].[spCreatePostByUserId]");
     debug("Post", result);
+    sql.close();
     return result.recordset[0];
   }
 
@@ -27,6 +28,7 @@ class Post {
       .input("PostId", sql.NVarChar(50), postId)
       .execute("[dbo].[spUpdatePostByPostId]");
     debug("Update", result);
+    sql.close();
     return result.recordset[0];
   }
 
@@ -36,6 +38,7 @@ class Post {
       .input("PostId", sql.NVarChar(50), postId)
       .execute("[dbo].[spDeletePostByPostId]");
     debug("Delete", result);
+    sql.close();
     if (result.rowsAffected[0] !== 1) {
       return false;
     }
@@ -48,6 +51,7 @@ class Post {
       .input("Offset", sql.NVarChar(50), offset)
       .execute("[dbo].[spGetPostsByOffsetOrderByNumVote]");
     debug("Get By Offset", result);
+    sql.close();
     return result.recordset;
   }
 
@@ -57,6 +61,7 @@ class Post {
       .input("PostId", sql.NVarChar(50), postId)
       .execute("[dbo].[spUpVotePostByPostId]");
     debug("UpVote", result);
+    sql.close();
     if (result.rowsAffected[0] !== 1) {
       return false;
     }
@@ -69,6 +74,7 @@ class Post {
       .input("PostId", sql.NVarChar(50), postId)
       .execute("[dbo].[spDownVotePostByPostId]");
     debug("DownVote", result);
+    sql.close();
     if (result.rowsAffected[0] !== 1) {
       return false;
     }

@@ -16,7 +16,7 @@ class User {
       .input("Password", sql.NVarChar(50), user.password)
       .input("Avatar", sql.NVarChar(sql.MAX), user.avatar)
       .execute("[dbo].[spCreateUser]");
-
+    sql.close();
     return result.recordset[0];
   }
 
@@ -29,7 +29,7 @@ class User {
       .input("Password", sql.NVarChar(50), user.password)
       .input("Avatar", sql.NVarChar(sql.MAX), user.avatar)
       .execute("[dbo].[spUpdateUserById]");
-
+    sql.close();
     return result.recordset[0];
   }
 
@@ -50,6 +50,7 @@ class User {
     const result = await request
       .input("Username", sql.NVarChar(50), username)
       .execute("[dbo].[spGetUserByUsername]");
+    sql.close();
     return result.recordset[0];
   }
 
@@ -58,6 +59,7 @@ class User {
     const result = await request
       .input("UserId", sql.NVarChar(50), userId)
       .execute("[dbo].[spGetUserById]");
+    sql.close();
     return result.recordset[0];
   }
 
