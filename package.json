@@ -1,0 +1,29 @@
+{
+  "name": "world-animal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "set DEBUG=app && node index.js",
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "debug": "^4.3.2",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.4"
+  },
+  "dependencies": {
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "image-conversion": "^2.1.1",
+    "joi": "^17.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mssql": "^7.1.3"
+  }
+}
